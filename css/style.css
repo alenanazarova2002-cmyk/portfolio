@@ -229,7 +229,7 @@ a {
 }
 
 .skill-item_html {    
-    background-image: url("/img/skill=html.svg");
+    background-image: url("../img/skill=html.svg");
 }
 
 .skill-item_css {    
