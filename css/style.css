@@ -148,11 +148,11 @@ a {
 }
 
 .social-link_github {    
-    background-image: url('/img/social=github.svg');
+    background-image: url('../img/social=github.svg');
 }
 
 .social-link_telegram {    
-    background-image: url("/img/social=telegram.svg");
+    background-image: url("../img/social=telegram.svg");
 }
 
 .contact {    
@@ -185,11 +185,11 @@ a {
 }
 
 .contact-link_phone {    
-    background-image: url("/img/icon=phone.svg");
+    background-image: url("../img/icon=phone.svg");
 }
 
 .contact-link_mail {    
-    background-image: url("/img/icon=email.svg");
+    background-image: url("../img/icon=email.svg");
 }
 
 .main-photo {    
@@ -229,29 +229,29 @@ a {
 }
 
 .skill-item_html {    
-    background-image: url("/img/skill=html.svg");
+    background-image: url("../img/skill=html.svg");
 }
 
 .skill-item_css {    
-    background-image: url("/img/skill=css.svg");
+    background-image: url("../img/skill=css.svg");
 }
 
 .skill-item_cpp {    
-    background-image: url("/img/skill=c++.svg");
+    background-image: url("../img/skill=c++.svg");
 }
 
 .skill-item_python {    
-    background-image:url("/img/skill=python.svg");
+    background-image:url("../img/skill=python.svg");
 }
 
 .skill-item_javascript {    
-    background-image: url("/img/skill=javascript.svg");
+    background-image: url("../img/skill=javascript.svg");
 }
 
 .skill-item_java {    
-    background-image: url("/img/skill=java.svg");
+    background-image: url("../img/skill=java.svg");
 }
 
 .skill-item_php {    
-    background-image: url("/img/skill=php.svg");
+    background-image: url("../img/skill=php.svg");
 }
