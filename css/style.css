@@ -148,7 +148,7 @@ a {
 }
 
 .social-link_github {    
-    background-image: url('../img/social=github.svg');
+    background-image: url("../img/social=github.svg");
 }
 
 .social-link_telegram {    
@@ -229,7 +229,7 @@ a {
 }
 
 .skill-item_html {    
-    background-image: url("../img/skill=html.svg");
+    background-image: url("/img/skill=html.svg");
 }
 
 .skill-item_css {    
