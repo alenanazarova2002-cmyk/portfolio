@@ -6,99 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио</title>
     <meta name="description" content="Портфолио Назаровой Алены" lang="ru">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <img src="img/main-logo.svg" alt="main-logo" height="60" width="60">
-        <nav>
-            <a href="#aboutme">
-                Обо мне
-            </a>
-            <a href="#skills">
-                Навыки
-            </a>
-            <a href="#interests">
-                Интересы
-            </a>
-            <a href="#contacts">
-                Контакты
-            </a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h1>Алена Назарова</h1>
-            <p>Программист</p>
-            <img src="img/my-photo.jpg" alt="my-photo" height="400" width="400">
-        </section>
-        <section id="aboutme">
-            <h2>Пара слов обо мне</h2>
-            <p>Привет ✌️</p>
-            <p>В данный момент я учусь в магистратуре МФ МГТУ им. Н. Э. Баумана
-                по направлению «Информатика и вычисли­тельная техника».</p>
-            <p>В прошлом году я защитила диплом бакалавра на тему «Разработка базы
-                данных усредненных метеорологических измерений для сети измерений
-                кафедры К3 МФ МГТУ Н.Э.Баумана».</p>
-            <p>С 2024 г. я работаю дата инженером в Сбере.</p>
-        </section>
-        <section id="skills">
-            <h2>Мои навыки</h2>
-            <div>
-                Сортировать
-                <button>по названию</button>
-                <button>по уровню</button>
-            </div>
-            <dl>
-                <dt>html</dt>
-                <dd>
-                    <div style="width: 40%">40%</div>
-                </dd>
-                <dt>css</dt>
-                <dd>
-                    <div style="width: 40%">40%</div>
-                </dd>
-                <dt>python</dt>
-                <dd>
-                    <div style="width: 70%">70%</div>
-                </dd>
-                <dt>c++</dt>
-                <dd>
-                    <div style="width: 40%">40%</div>
-                </dd>
-                <dt>javascript</dt>
-                <dd>
-                    <div style="width: 40%">40%</div>
-                </dd>
-                <dt>java</dt>
-                <dd>
-                    <div style="width: 30%">30%</div>
-                </dd>
-            </dl>
-        </section>
-        <section id="interests">
-            <h2>Мои интересы</h2>
-            <p>Наибольший интерес для меня в данный момент представляет
-                работа с базами данных и их изучение.</p>
-            <p>Но помимо учёбы и работы я также люблю играть в настольные
-                игры и заниматься рукоделием.</p>
-        </section>
-        <section id="contacts">
-            <h2>Мои контакты</h2>
-            <ul>
-                <li><a href="tel:+79800180629">+7 980 018-06-29</a></li>
-                <li><a href="mailto:alenanazarova2002@gmail.com">alenanazarova2002@gmail.com</a></li>
-            </ul>
-            <ul>
-                <li><a href="https://github.com/alenanazarova2002-cmyk">github</a></li>
-                <li><a href="https://t.me/SunShineSquirrel">telegram</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>© 2025 Алена Назарова</p>
+    <div class="container">
+        <header class="main-header">
+            <img src="img/main-logo.svg" alt="main-logo" height="60" width="60">
+            <nav class="main-nav">
+                <a href="#aboutme">
+                    Обо мне
+                </a>
+                <a href="#skills">
+                    Навыки
+                </a>
+                <a href="#interests">
+                    Интересы
+                </a>
+                <a href="#contacts">
+                    Контакты
+                </a>
+            </nav>
+        </header>
+        <main>
+            <section class="name">
+                <h1>Алена Назарова</h1>
+                <p class="subtitle">Программист</p>
+                <img class="main-photo" src="img/my-photo.jpg" alt="my-photo" height="400" width="400">
+            </section>
+            <section id="aboutme" class="intro">
+                <h2>Пара слов обо мне</h2>
+                <p>Привет ✌️</p>
+                <p>В данный момент я учусь в магистратуре МФ МГТУ им. Н. Э. Баумана
+                    по направлению «Информатика и вычисли­тельная техника».</p>
+                <p>В прошлом году я защитила диплом бакалавра на тему «Разработка базы
+                    данных усредненных метеорологических измерений для сети измерений
+                    кафедры К3 МФ МГТУ Н.Э.Баумана».</p>
+                <p>С 2024 г. я работаю дата инженером в Сбере.</p>
+            </section>
+            <section id="skills" class="skills">
+                <h2>Мои навыки</h2>
+                <div>
+                    Сортировать
+                    <button>по названию</button>
+                    <button>по уровню</button>
+                </div>
+                <dl class="skill-list">
+                    <dt class="skill-item skill-item_html">html</dt>
+                    <dd class="skill-level">
+                        <div style="width: 40%">40%</div>
+                    </dd>
+                    <dt class="skill-item skill-item_css">css</dt>
+                    <dd class="skill-level">
+                        <div style="width: 40%">40%</div>
+                    </dd>
+                    <dt class="skill-item skill-item_python">python</dt>
+                    <dd class="skill-level">
+                        <div style="width: 70%">70%</div>
+                    </dd>
+                    <dt class="skill-item skill-item_cpp">c++</dt>
+                    <dd class="skill-level">
+                        <div style="width: 40%">40%</div>
+                    </dd>
+                    <dt class="skill-item skill-item_javascript">javascript</dt>
+                    <dd class="skill-level">
+                        <div style="width: 40%">40%</div>
+                    </dd>
+                    <dt class="skill-item skill-item_java">java</dt>
+                    <dd class="skill-level">
+                        <div style="width: 30%">30%</div>
+                    </dd>
+                </dl>
+            </section>
+            <section id="interests" class="interests">
+                <h2>Мои интересы</h2>
+                <p>Наибольший интерес для меня в данный момент представляет
+                    работа с базами данных и их изучение.</p>
+                <p>Но помимо учёбы и работы я также люблю играть в настольные
+                    игры и заниматься рукоделием.</p>
+            </section>
+            <section id="contacts" class="contacts">
+                <h2>Мои контакты</h2>
+                <ul class="contact">
+                    <li><a class="contact-link contact-link_phone" href="tel:+79800180629">+7 980 018-06-29</a></li>
+                    <li><a class="contact-link contact-link_mail"
+                            href="mailto:alenanazarova2002@gmail.com">alenanazarova2002@gmail.com</a></li>
+                </ul>
+                <ul class="social">
+                    <li><a class="social-link social-link_github"
+                            href="https://github.com/alenanazarova2002-cmyk"><span class="visually-hidden">github</span></a></li>
+                    <li><a class="social-link social-link_telegram" href="https://t.me/SunShineSquirrel"><span class="visually-hidden">telegram</span></a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Алена Назарова</p>
+        </div>
     </footer>
 </body>
 </html>
