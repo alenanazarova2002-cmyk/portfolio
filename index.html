@@ -11,12 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
 </head>
 
-<body>
+<body class="dark-theme">
+    <label class="switch">
+        <input class="switch-checkbox" type="checkbox">
+        <span class="switch-slider"></span>
+    </label>
     <div class="container">
         <header class="main-header">
-            <img src="img/main-logo.svg" alt="main-logo" height="60" width="60">
+            <div class="main-header-wrap">
+                <img src="img/main-logo.svg" alt="main-logo" height="60" width="60">
+                <button class="nav-btn nav-btn_close">
+                   <span class="visually-hidden">
+                      Закрыть меню
+                   </span>
+              </button>
+            </div>
             <nav class="main-nav">
                 <a href="#aboutme">
                     Обо мне
@@ -57,36 +69,11 @@
                     <h2>Мои навыки</h2>
                     <div class="skills-buttons">
                         Сортировать
-                        <button>по названию</button>
-                        <button>по уровню</button>
+                        <button data-type="name">по названию</button>
+                        <button data-type="level">по уровню</button>
                     </div>
                 </div>
-                <dl class="skill-list">
-                    <dt class="skill-item skill-item_html">html</dt>
-                    <dd class="skill-level">
-                        <div style="width: 40%">40%</div>
-                    </dd>
-                    <dt class="skill-item skill-item_css">css</dt>
-                    <dd class="skill-level">
-                        <div style="width: 40%">40%</div>
-                    </dd>
-                    <dt class="skill-item skill-item_python">python</dt>
-                    <dd class="skill-level">
-                        <div style="width: 70%">70%</div>
-                    </dd>
-                    <dt class="skill-item skill-item_cpp">c++</dt>
-                    <dd class="skill-level">
-                        <div style="width: 40%">40%</div>
-                    </dd>
-                    <dt class="skill-item skill-item_javascript">javascript</dt>
-                    <dd class="skill-level">
-                        <div style="width: 40%">40%</div>
-                    </dd>
-                    <dt class="skill-item skill-item_java">java</dt>
-                    <dd class="skill-level">
-                        <div style="width: 30%">30%</div>
-                    </dd>
-                </dl>
+                <dl class="skill-list"></dl>
             </section>
             <section id="interests" class="interests">
                 <h2>Мои интересы</h2>

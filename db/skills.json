@@ -1,0 +1,32 @@
+[
+        {
+            "name": "html",
+            "level": 40,
+            "file": "skill=html.svg"
+        },
+        {
+            "name": "css",
+            "level": 40,
+            "file": "skill=css.svg"
+        },
+        {
+            "name": "python",
+            "level": 70,
+            "file": "skill=python.svg"
+        },
+        {
+            "name": "c++",
+            "level": 40,
+            "file": "skill=c++.svg"
+        },
+        {
+            "name": "javascript",
+            "level": 40,
+            "file": "skill=javascript.svg"
+        },
+        {
+            "name": "java",
+            "level": 30,
+            "file": "skill=java.svg"
+        }
+    ]
