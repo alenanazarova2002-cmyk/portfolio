@@ -281,6 +281,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
 }
 
 .text-wrapper {
@@ -305,6 +306,7 @@ p + p {
     flex-wrap: wrap;
     margin: 0;
     margin-bottom: 40px;
+    gap: 30px;
 }
 
 .skills-buttons {
@@ -320,6 +322,7 @@ p + p {
 
 .nav-btn {
     display: none;
+    background-color: none;
 }
 
 .switch {

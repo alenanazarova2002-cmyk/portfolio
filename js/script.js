@@ -1,29 +1,4 @@
-const skills = {
-    data: [],
-
-    sortMode: null,
-
-    generateList(parentElement) {
-        parentElement.innerHTML = '';
-        this.data.forEach(skill => {
-            const dtElement = document.createElement('dt');
-            dtElement.className = 'skill-item';
-            dtElement.textContent = skill.name;
-            dtElement.style.backgroundImage = `url('img/${skill.file}')`;
-            
-            const ddElement = document.createElement('dd');
-            ddElement.className = 'skill-level';
-            
-            const divElement = document.createElement('div');
-            divElement.style.width = skill.level + '%';
-            divElement.textContent = skill.level;
-            
-            ddElement.appendChild(divElement);
-            skillList.append(dtElement, ddElement);
-        });
-    },
-
-    getComparer(prop) {
+function getComparer(prop) {
         return function (a,b) {
             if (a[prop] < b[prop]) {
                 return -1;
@@ -33,87 +8,122 @@ const skills = {
             }
             return 0;
         }
+    };
+
+const skills = {
+    data: [],
+
+    sortMode: null,
+
+    renderList(parentElement) {
+        parentElement.innerHTML = '';
+        this.data.forEach(skill => {
+            const dtElement = document.createElement('dt');
+            dtElement.className = 'skill-item';
+            dtElement.textContent = skill.name;
+            dtElement.style.backgroundImage = `url('img/${skill.image}')`;
+            
+            const ddElement = document.createElement('dd');
+            ddElement.className = 'skill-level';
+            
+            const divElement = document.createElement('div');
+            divElement.style.width = skill.level + '%';
+            divElement.textContent = skill.level;
+            
+            ddElement.appendChild(divElement);
+            this.skillList.append(dtElement, ddElement);
+        });
     },
 
     sortList(type) {
         if (this.sortMode !== type) {
-                this.data.sort(this.getComparer(type));
+                this.data.sort(getComparer(type));
                 this.sortMode = type;
                 console.log('Отсортировали данные по ' + type);
             } else {
                 this.data.reverse();
                 console.log('Инвертировали порядок сортировки');
             }
-        this.generateList(skillList);
+        this.renderList(this.skillList);
     },
 
-    getData() {
-        fetch('db/skills.json')
+    getData(filePath) {
+        fetch(filePath)
             .then(data => data.json())
             .then(object => {
                 this.data = object;
-                this.generateList(skillList);
+                this.renderList(this.skillList);
             })
             .catch(() => {
                 console.error('Что-то пошло не так');
-                skillSection.style.display = 'none';
+                this.skillSection.style.display = 'none';
             });
+    },
+
+    init() {
+        this.skillList = document.querySelector('dl.skill-list');
+        this.skillSort = document.querySelector('.skills-buttons');
+        this.skillSection = document.querySelector('.skills');
+        const filePath = 'db/skills.json';
+        this.getData(filePath);
+
+        this.skillSort.addEventListener('click', (e) => {
+            const target = e.target;
+            
+            if (target.nodeName === "BUTTON") {
+                const type = target.dataset.type;
+                switch(type) {
+                    case 'name':
+                        this.sortList(type);
+                        break;
+                    case 'level':
+                        this.sortList(type);
+                        break;
+                    default:
+                        console.log('Неизвестная кнопка');
+                }
+            }
+        });
     }
 };
 
 const menu = {
     close() {
-        nav.classList.add('main-nav_closed');
-        navButton.classList.remove('nav-btn_close');
-        navButton.classList.add('nav-btn_open');
-        navButton.innerHTML = '<span class="visually-hidden">Открыть меню</span>';
+        this.nav.classList.add('main-nav_closed');
+        this.navButton.classList.remove('nav-btn_close');
+        this.navButton.classList.add('nav-btn_open');
+        this.navButton.innerHTML = '<span class="visually-hidden">Открыть меню</span>';
     },
 
     open() {
-        nav.classList.remove('main-nav_closed');
-        navButton.classList.add('nav-btn_close');
-        navButton.classList.remove('nav-btn_open');
-        navButton.innerHTML = '<span class="visually-hidden">Закрыть меню</span>';
+        this.nav.classList.remove('main-nav_closed');
+        this.navButton.classList.add('nav-btn_close');
+        this.navButton.classList.remove('nav-btn_open');
+        this.navButton.innerHTML = '<span class="visually-hidden">Закрыть меню</span>';
+    },
+
+    init() {
+        this.nav = document.querySelector('.main-nav');
+        this.navButton = document.querySelector('.nav-btn');
+
+        this.close();
+
+        this.navButton.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-btn_open')) {
+                this.open();
+            } else {
+                this.close();
+            }
+        });
     }
 };
 
-const skillList = document.querySelector('dl.skill-list');
-const skillSort = document.querySelector('.skills-buttons');
-const skillSection = document.querySelector('.skills')
-const nav = document.querySelector('.main-nav');
-const navButton = document.querySelector('.nav-btn');
 const themeSwitch = document.querySelector('.switch-checkbox');
 const body = document.querySelector('body');
 
-menu.close();
+menu.init();
 
-skills.getData();
-
-skillSort.addEventListener('click', (e) => {
-    let target = e.target;
-    
-    if (target.nodeName === "BUTTON") {
-        const type = target.dataset.type;
-        switch(type) {
-            case 'name':
-                skills.sortList(type);
-                break;
-            case 'level':
-                skills.sortList(type);
-                break;
-            default:
-                console.log('Неизвестная кнопка');
-        }
-    }
-});
-
-navButton.addEventListener('click', (e) => {
-    if (e.target.classList.contains('nav-btn_open')) {
-        menu.open();
-    } else {
-        menu.close();
-    }
-});
+skills.init();
 
 if (localStorage.getItem('theme') === 'light') {
     body.classList.remove('dark-theme');
